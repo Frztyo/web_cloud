@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Selamat Datang ke WEBSITE ku</h1>
+    <h1>TEKNOLOGI INFORMASI</h1>
 </body>
 </html>

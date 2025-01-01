@@ -115,17 +115,7 @@ if (empty($_SESSION['user'])) {
       $ambil = mysqli_query($db, "SELECT * FROM user");
       $data_user = mysqli_fetch_array($ambil);
       ?>
-      <div class="sidebar">
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div class="image">
-            <img src="hanif.jpg" class="img-circle elevation-2" alt="User Image">
-          </div>
-          <div class="info">
-            <a href="#" class="d-block"><?php echo $data_user['username']; ?></a>
-          </div>
-        </div>
-
+      <div class="sidebar">        
         <!-- SidebarSearch Form -->
         <div class="form-inline">
           <div class="input-group" data-widget="sidebar-search">
@@ -201,13 +191,6 @@ if (empty($_SESSION['user'])) {
       <a href="index.php?p=users" class="nav-link <?php echo (isset($_GET['p']) && $_GET['p']=='users') ? 'active' : ''; ?>">
         <i class="nav-icon fas fa-user"></i>
         <p>Users</p>
-      </a>
-    </li>
-
-    <li class="nav-item">
-      <a href="index.php?p=level" class="nav-link <?php echo (isset($_GET['p']) && $_GET['p']=='level') ? 'active' : ''; ?>">
-        <i class="nav-icon fas fa-layer-group"></i>
-        <p>Level</p>
       </a>
     </li>
 

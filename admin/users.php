@@ -17,37 +17,23 @@ switch ($aksi) {
             <table class="table table-bordered col-30">
                 <tr>
                     <th>No</th>
-                    <th>Username</th>
+                    <th>Id</th>
                     <th>Email</th>
                     <th>Level</th>
-                    <th>Nama Lengkap</th>
-                    <th>No Telp</th>
-                    <th>Photo</th>
                     <th>Aksi</th>
                 </tr>
                 <?php
                 include 'koneksi.php';
                 // Modifikasi query untuk JOIN dengan tabel level
-                $ambil = mysqli_query($db, "SELECT user.*, level.nama_level 
-                               FROM user 
-                               LEFT JOIN level ON user.level = level.id");
+                $ambil = mysqli_query($db, "SELECT * FROM user");
                 $no = 1;
                 while ($data = mysqli_fetch_array($ambil)) {
                 ?>
                     <tr>
                         <td><?php echo $no ?></td>
-                        <td><?= $data['username'] ?></td>
+                        <td><?= $data['id'] ?></td>
                         <td><?= $data['email'] ?></td>
-                        <td><?= $data['nama_level'] ?></td>
-                        <td><?= $data['nama_lengkap'] ?></td>
-                        <td><?= $data['notelp'] ?></td>
-                        <td>
-                            <?php if ($data['photo'] && file_exists("uploads/" . $data['photo'])): ?>
-                                <img src="uploads/<?= $data['photo'] ?>" alt="Photo" style="max-width: 100px;">
-                            <?php else: ?>
-                                <img src="assets/img/no-image.png" alt="No Photo" style="max-width: 100px;">
-                            <?php endif; ?>
-                        </td>
+                        <td><?= $data['level'] ?></td>
                         <td>
                             <a href="index.php?p=users&aksi=edit&id=<?= $data['id'] ?>" class="btn btn-success"><i class="bi bi-pen-fill"></i> Edit</a>
                             <a href="proses_users.php?proses=delete&id=<?= $data['id'] ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="bi bi-trash"></i> Hapus</a>

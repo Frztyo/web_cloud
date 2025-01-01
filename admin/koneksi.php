@@ -3,7 +3,7 @@
 $host = 'localhost';  // Nama host server (biasanya localhost untuk XAMPP)
 $user = 'root';       // Username default XAMPP
 $password = '';       // Password kosong jika belum diubah
-$database = 'tekom_2b';  // Nama database yang ingin dihubungkan
+$database = 'tekom2b_kasus';  // Nama database yang ingin dihubungkan
 
 // Menghubungkan ke MySQL
 $db = mysqli_connect($host, $user, $password, $database);
